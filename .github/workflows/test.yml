@@ -1,4 +1,3 @@
-```yaml
 name: AWS Secret Scanning Test
 
 on:
@@ -33,4 +32,3 @@ jobs:
           git add secret-scanning-test/aws-test.txt
           git commit -m "Test AWS secret scanning with dummy data" || exit 0
           git push
-```
