@@ -20,7 +20,7 @@ jobs:
 
           cat > secret-scanning-test/aws-test.txt <<'EOF'
           # Synthetic test data only - not a real AWS credential
-          aws_access_key_id = "AKIAIOSFODNN7EXAMPLE"
+          github_ssh_private_key = "b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZWQyNTUxOQAAACAuvSdABC5F7oe1uLEEpmvEJP64wOscW7CriDhRdK8EfQAAAKDrGMI/6xjCPwAAAAtzc2gtZWQyNTUxOQAAACAuvSdABC5F7oe1uLEEpmvEJP64wOscW7CriDhRdK8EfQAAAECUdreAuCT3+ytuYO/pFdgEuJS+X1X4N9ti8WCxeMiX3i69J0AELkXuh7W4sQSma8Qk/rjA6xxbsKuIOFF0rwR9AAAAFmFwa2FfZW1haWxAZXhhbXBsZS5jb20BAgMEBQYH"
           aws_secret_access_key = "EXAMPLE_NOT_A_REAL_SECRET_KEY"
           EOF
 
