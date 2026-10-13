@@ -1,0 +1,36 @@
+```yaml
+name: AWS Secret Scanning Test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test-aws-detection:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create dummy AWS credential
+        run: |
+          mkdir -p secret-scanning-test
+
+          cat > secret-scanning-test/aws-test.txt <<'EOF'
+          # Synthetic test data only - not a real AWS credential
+          aws_access_key_id = "AKIAIOSFODNN7EXAMPLE"
+          aws_secret_access_key = "EXAMPLE_NOT_A_REAL_SECRET_KEY"
+          EOF
+
+      - name: Commit dummy credential
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add secret-scanning-test/aws-test.txt
+          git commit -m "Test AWS secret scanning with dummy data" || exit 0
+          git push
+```
